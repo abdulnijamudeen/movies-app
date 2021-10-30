@@ -54,7 +54,7 @@ export class HomePage implements OnInit {
       case 'top':      service = this.tmdb.getTopMovies(this.page); break;
       case 'upcoming': service = this.tmdb.getUpcomingMovies(this.page); break;
     }
-    const loadingOpts = { translucent: true, spinner: 'crescent', content: 'Cargando' };
+    const loadingOpts = { translucent: true, spinner: 'crescent', content: 'Loading' };
     const loading = await this.loadingCtrl.create(loadingOpts);
     loading.present();
     service.subscribe(res => {

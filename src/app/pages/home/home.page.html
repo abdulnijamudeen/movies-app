@@ -11,9 +11,9 @@
 
 <ion-content padding>
 
-  <h1 *ngIf="movies && segment == 'popular'">Populares</h1>
+  <h1 *ngIf="movies && segment == 'popular'">Popular</h1>
   <h1 *ngIf="movies && segment == 'top'">Top</h1>
-  <h1 *ngIf="movies && segment == 'upcoming'">Próximamente</h1>
+  <h1 *ngIf="movies && segment == 'upcoming'">Upcoming</h1>
 
   <div class="movies-flex" *ngIf="movies">
     <div class="movie" *ngFor="let movie of movies" (click)="onMovieDetail(movie.id)">
@@ -28,10 +28,10 @@
   </div>
   
   <div class="content-fullscreen-message" *ngIf="movies && movies.length == 0">
-    Se ha producido un error, no se han encontrado películas
+    An error occurred, no movies found
   </div>
 
-  <ion-button *ngIf="movies && movies.length > 0 && page < 5" expand="full" size="large" fill="clear" (click)="onNextPage()">Ver más</ion-button>
+  <ion-button *ngIf="movies && movies.length > 0 && page < 5" expand="full" size="large" fill="clear" (click)="onNextPage()">See more</ion-button>
 
 </ion-content>
 
@@ -40,7 +40,7 @@
     <div class="tabs">
       <div class="tab" [ngClass]="{ 'active' : segment == 'popular' }" (click)="onTabSelected('popular')">
         <ion-icon name="flame"></ion-icon>
-        <div class="label">Populares</div>
+        <div class="label">Popular</div>
       </div>
       <div class="tab" [ngClass]="{ 'active' : segment == 'top' }" (click)="onTabSelected('top')">
         <ion-icon name="star"></ion-icon>
@@ -48,7 +48,7 @@
       </div>
       <div class="tab" [ngClass]="{ 'active' : segment == 'upcoming' }" (click)="onTabSelected('upcoming')">
         <ion-icon name="calendar"></ion-icon>
-        <div class="label">Próximamente</div>
+        <div class="label">Upcoming</div>
       </div>
     </div>
   </ion-toolbar>

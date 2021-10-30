@@ -14,7 +14,7 @@ export class TmdbService {
   private readonly baseUrl = 'https://api.themoviedb.org/3';
   private readonly params = {
     api_key: 'PUT_HERE_YOUR_TMDB_API_KEY',
-    language: 'es-ES'
+    language: 'en-US'
   };
 
   constructor(

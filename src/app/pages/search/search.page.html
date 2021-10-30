@@ -7,8 +7,8 @@
   </ion-toolbar>
   <ion-toolbar>
     <ion-segment [(ngModel)]="searchType" (ionChange)="onSearchTypeChange()">
-      <ion-segment-button value="movies">Películas</ion-segment-button>
-      <ion-segment-button value="persons">Personas</ion-segment-button>
+      <ion-segment-button value="movies">Movies</ion-segment-button>
+      <ion-segment-button value="persons">Artist</ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-header>
@@ -48,7 +48,7 @@
         <ion-icon class="arrow" name="arrow-forward"></ion-icon>
         <div class="title">{{ person.name }}</div>
         <div class="subtitle" *ngIf="person?.known_for?.length > 0">
-          <small>Películas destacadas:</small><br>
+          <small>Movies featured:</small><br>
           <span *ngFor="let m of person.known_for; let last = last">
             <span *ngIf="m.title">{{ m.title }}<span *ngIf="!last">, </span></span> <!-- ignore tv shows -->
           </span>
@@ -58,7 +58,7 @@
   </div>
 
   <div class="content-fullscreen-message" *ngIf="results && results.length == 0">
-    No se han encontrado <span *ngIf="searchType === 'movies'">películas</span><span *ngIf="searchType == 'persons'">actores</span>
+    No se han encontrado <span *ngIf="searchType === 'movies'">Movies</span><span *ngIf="searchType == 'persons'">actores</span>
   </div>
   <div class="recognizer-box" *ngIf="!results && searchType == 'persons'">
     <p>Sube una foto y buscaremos las celebridades que aparecen en ella</p>
